@@ -8,7 +8,7 @@ Make sure that **Homebrew** is installed on your system.
    ```bash
    brew install allure
    ```
-   
+
 2. Verify the installation by checking the version:
    ```bash
    allure --version
@@ -71,7 +71,3 @@ This command will build the report and serve it via a local web server, which op
 ---
 
 For more details on Allure, visit the [official documentation](https://docs.qameta.io/allure/).
-Report will be generated into temp folder. Web server with results will start.
-
-mvn allure:report
-Report will be generated tо directory: target/site/allure-maven/index.html
