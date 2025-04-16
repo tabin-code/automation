@@ -1,53 +1,76 @@
-Make sure Homebrew is installed.
+# Allure Report Integration Guide
 
-In a terminal, run this command:
+## Prerequisites
+Make sure that **Homebrew** is installed on your system.
 
-brew install allure
-Run this command to see if it reports the latest version:
+## Installation
+1. Open a terminal and run the following command to install Allure:
+   ```bash
+   brew install allure
+   ```
+   
+2. Verify the installation by checking the version:
+   ```bash
+   allure --version
+   ```
 
-To enable the integration in your project:
+## Enable Allure Report Integration in Your Project
+### Step 1: Setup Allure Report Adapter
+Ensure that you have the **Allure Report adapter** enabled for the test framework you are using. Refer to the adapter's documentation for your specific framework in the [Allure Frameworks Guide](https://docs.qameta.io/allure/#_frameworks).
 
-Make sure you have the Allure Report adapter enabled for the test framework you use.
+### Step 2: Add Allure REST-Assured Integration
+For projects using **Maven**, add the Allure REST Assured dependencies:
 
-See the instructions in the adapter's documentation in Frameworks.
+1. Define the Allure version you wish to use in the `<properties>` section of your `pom.xml`:
+   ```xml
+   <properties>
+       <allure.version>2.25.0</allure.version>
+   </properties>
+   ```
 
-Add the Allure REST Assured integration to your project's dependencies.
+2. Add the Allure BOM (Bill of Materials) to your `dependencyManagement` to ensure correct versions of all dependencies:
+   ```xml
+   <dependencyManagement>
+       <dependencies>
+           <dependency>
+               <groupId>io.qameta.allure</groupId>
+               <artifactId>allure-bom</artifactId>
+               <version>${allure.version}</version>
+               <type>pom</type>
+               <scope>import</scope>
+           </dependency>
+       </dependencies>
+   </dependencyManagement>
+   ```
 
-Maven
+3. Add the required Allure dependencies to the `<dependencies>` section:
+   ```xml
+   <dependencies>
+       <dependency>
+           <groupId>io.qameta.allure</groupId>
+           <artifactId>allure-rest-assured</artifactId>
+           <scope>test</scope>
+       </dependency>
+   </dependencies>
+   ```
 
-xml
-<!-- Define the version of Allure you want to use via the allure.version property -->
-<properties>
-    <allure.version>2.25.0</allure.version>
-</properties>
+## Running Your Tests
+Run your tests with Maven:
+```bash
+mvn clean test
+```
 
-<!-- Add allure-bom to dependency management to ensure correct versions of all the dependencies are used -->
-<dependencyManagement>
-<dependencies>
-    <dependency>
-        <groupId>io.qameta.allure</groupId>
-        <artifactId>allure-bom</artifactId>
-        <version>${allure.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-    </dependency>
-</dependencies>
-</dependencyManagement>
-
-<!-- Add necessary Allure dependencies to dependencies section -->
-<dependencies>
-<dependency>
-    <groupId>io.qameta.allure</groupId>
-    <artifactId>allure-rest-assured</artifactId>
-    <scope>test</scope>
-</dependency>
-</dependencies>
-
-
-mvn clean test - run your tests
-You can generate a report using one of the following command:
-
+## Generating Allure Reports
+You can generate and view test reports using the following command:
+```bash
 mvn allure:serve
+```
+
+This command will build the report and serve it via a local web server, which opens automatically in your default web browser.
+
+---
+
+For more details on Allure, visit the [official documentation](https://docs.qameta.io/allure/).
 Report will be generated into temp folder. Web server with results will start.
 
 mvn allure:report
