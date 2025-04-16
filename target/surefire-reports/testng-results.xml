@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-04-15T21:13:09 PDT" name="TabinAutomationTestSuite" finished-at="2025-04-15T21:13:19 PDT" duration-ms="9230">
+    <groups>
+    </groups>
+    <test started-at="2025-04-15T21:13:09 PDT" name="Tabin-APITestSuite" finished-at="2025-04-15T21:13:19 PDT" duration-ms="9230">
+      <class name="org.tabin.auth.AuthApiTest">
+        <test-method is-config="true" signature="setupIDToken()[pri:0, instance:org.tabin.auth.AuthApiTest@1b065145]" started-at="2025-04-15T21:13:09 PDT" name="setupIDToken" finished-at="2025-04-15T21:13:18 PDT" duration-ms="8279" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupIDToken -->
+        <test-method signature="testAuthGoogleEndpoint()[pri:0, instance:org.tabin.auth.AuthApiTest@1b065145]" started-at="2025-04-15T21:13:18 PDT" name="testAuthGoogleEndpoint" finished-at="2025-04-15T21:13:19 PDT" duration-ms="922" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAuthGoogleEndpoint -->
+        <test-method signature="testSharedAccessToken()[pri:0, instance:org.tabin.auth.AuthApiTest@1b065145]" started-at="2025-04-15T21:13:19 PDT" name="testSharedAccessToken" description="Verify shared token setup from @BeforeClass" finished-at="2025-04-15T21:13:19 PDT" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSharedAccessToken -->
+      </class> <!-- org.tabin.auth.AuthApiTest -->
+    </test> <!-- Tabin-APITestSuite -->
+  </suite> <!-- TabinAutomationTestSuite -->
+</testng-results>

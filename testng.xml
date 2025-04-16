@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="TabinAutomationTestSuite" verbose="1" parallel="false">
+    <test name="Tabin-APITestSuite">
+        <classes>
+            <class name="org.tabin.auth.AuthApiTest" />
+            <class name="org.tabin.login.LoginApiTest" />
+        </classes>
+    </test>
+</suite>

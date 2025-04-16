@@ -1,0 +1,1 @@
+{"uuid":"71719490-a611-4f07-9f08-c666c974cdf6","name":"org.tabin.auth.AuthApiTest","children":["10363f9d-8121-4d3d-a841-a8cc0ee5b8b6"],"befores":[{"name":"setupAccessToken","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1744763832398,"stop":1744763841391}],"afters":[],"start":1744763832390,"stop":1744763841425}
